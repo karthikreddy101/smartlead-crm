@@ -15,13 +15,16 @@ const errorHandlers = require('./handlers/errorHandlers');
 const erpApiRouter = require('./routes/appRoutes/appApi');
 
 const fileUpload = require('express-fileupload');
+
 // create our Express app
 const app = express();
 
 app.use(
   cors({
-    origin: true,
+    origin: 'https://smartlead-crm-plum.vercel.app',
     credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
 
